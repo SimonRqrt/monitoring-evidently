@@ -169,3 +169,21 @@ cython_debug/
 
 # PyPI configuration file
 .pypirc
+
+DS_Store
+
+# Project specific
+api/models/*.pkl
+monitoring/reports/*
+data/*.csv
+!data/titanic_clean.csv
+
+# Monitoring & Metrics
+prometheus/data/
+grafana/data/
+
+# IDE specific
+.vscode/
+.idea/
+*.swp
+*.swo
