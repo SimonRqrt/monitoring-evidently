@@ -39,7 +39,7 @@ L'API est développée avec **FastAPI** et permet de faire des prédictions avec
 Les rapports de surveillance des dérives et des performances du modèle sont générés par Evidently AI.
 
 - Exécutez le notebook **monitoring.ipynb** pour analyser les dérives de données et les performances du modèle.
-- Le rapport de dérive est enregistré en HTML et accessible dans le notebook.
+- Le rapport de drift est enregistré en HTML et accessible dans le dossier **exports**.
 
 ### Monitoring de l'Infrastructure avec Grafana & Prometheus
 
