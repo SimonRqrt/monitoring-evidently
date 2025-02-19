@@ -48,7 +48,7 @@ Les rapports de surveillance des dérives et des performances du modèle sont g�
   ```
   http://localhost:3000
   ```
-  (Utilisateur par défaut : `admin` / Mot de passe : `admin`)
+  (Utilisateur par défaut : `admin` / Mot de passe : `password@123`)
 
 **Prometheus** collecte les métriques de l'API et du serveur.
 - Accédez à Prometheus via :
