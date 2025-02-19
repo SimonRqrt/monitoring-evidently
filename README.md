@@ -50,6 +50,8 @@ Les rapports de surveillance des dérives et des performances du modèle sont g�
   ```
   (Utilisateur par défaut : `admin` / Mot de passe : `password@123`)
 
+  ![Dashboard Grafana](https://raw.githubusercontent.com/SimonRqrt/monitoring-evidently/main/monitoring/grafana/provisioning/dashboards/grafana-dashboard.png)
+
 **Prometheus** collecte les métriques de l'API et du serveur.
 - Accédez à Prometheus via :
   ```
