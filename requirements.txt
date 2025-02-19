@@ -1,0 +1,14 @@
+# API
+fastapi
+uvicorn
+pydantic
+
+# Data & ML
+pandas
+scikit-learn
+numpy
+
+# Monitoring
+evidently
+prometheus-client
+prometheus-fastapi-instrumentator

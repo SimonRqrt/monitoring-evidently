@@ -1,0 +1,65 @@
+version: "3.8"
+
+services:
+  api:
+    build:
+      context: ./monitoring/api/
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    container_name: api
+    ports:
+      - 8000:8000
+    networks:
+      example-network:
+        ipv4_address: 172.16.238.10
+  
+  node-exporter:
+      image: prom/node-exporter:latest
+      restart: unless-stopped
+      container_name: node-exporter
+      ports:
+        - 9100:9100
+      command:
+        - '--path.rootfs=/host'
+      volumes:
+        - '/:/host:ro'
+      networks:
+        example-network:
+          ipv4_address: 172.16.238.13
+
+  prometheus:
+    image: prom/prometheus:latest
+    restart: unless-stopped
+    container_name: prometheus
+    ports:
+      - 9090:9090
+    volumes:
+      - ./monitoring/prometheus/prometheus.yml:/etc/prometheus/prometheus.yml
+    networks:
+      example-network:
+        ipv4_address: 172.16.238.11
+
+  grafana:
+    image: grafana/grafana
+    container_name: grafana
+    restart: unless-stopped
+    depends_on:
+      - prometheus
+    ports:
+      - 3000:3000
+    volumes:
+      - ./monitoring/grafana/provisioning:/etc/grafana/provisioning
+    env_file:
+      - ./monitoring/grafana/config.monitoring
+    networks:
+      example-network:
+        ipv4_address: 172.16.238.12
+
+networks:
+  example-network:
+    name: example-network
+    driver: bridge
+    ipam:
+      driver: default
+      config:
+        - subnet: 172.16.238.0/24
