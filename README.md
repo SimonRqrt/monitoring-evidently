@@ -1,7 +1,7 @@
 # Monitoring d'une API de Prédiction avec Evidently AI, Prometheus et Grafana
 
 ## Description
-Ce projet met en place un système complet de monitoring pour une API de prédiction basée sur un modèle de Machine Learning. Le modèle est entraîné sur le dataset **Titanic** de `sklearn`. L'objectif est de surveiller les performances du modèle, les dérives de données et la santé de l'API en production.
+Ce projet met en place un système complet de monitoring pour une API de prédiction basée sur un modèle de Machine Learning. Le modèle est entraîné sur le dataset **Diabetes** de `sklearn`. L'objectif est de surveiller les performances du modèle, les dérives de données et la santé de l'API en production.
 
 ## Prérequis
 Avant de commencer, assurez-vous d'avoir installé :
@@ -23,7 +23,7 @@ docker-compose up --build
 
 ## Utilisation
 ### API
-L'API est développée avec **FastAPI** et permet de faire des prédictions avec le modèle Titanic.
+L'API est développée avec **FastAPI** et permet de faire des prédictions avec le modèle Diabetes.
 
 - Accédez à la documentation interactive Swagger :
   ```
